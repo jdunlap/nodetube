@@ -58,20 +58,26 @@ block content
                                 //button.btn.btn-success(name="userChangeValue" value="approve" type="submit") Approve
                                 //br
                                 //br
-                                button.btn.btn-primary(name="userChangeValue" value="trustUser" type="submit" ) Trust User
-                                br
-                                br
-                                button.btn.btn-danger(name="userChangeValue" value="untrustUser" type="submit" ) Untrust User
-                                br
-                                br
-                                button.btn.btn-success(name="userChangeValue" value="unbanUser" type="submit" ) Unban User
-                                br
-                                br
-                                button.btn.btn-danger(name="userChangeValue" value="banUser" type="submit") Ban User
-                                br
-                                br
-                                button.btn.btn-primary(name="userChangeValue" value="allowLivestream" type="submit") Allow Stream
-                                br
-                                br
-                                button.btn.btn-danger(name="userChangeValue" value="disallowLivestream" type="submit") Block Stream
+                                if !user.privs.autoVisibleUpload
+                                   button.btn.btn-primary(name="userChangeValue" value="trustUser" type="submit" ) Trust User
+                                   br
+                                   br
+                                else
+                                   button.btn.btn-danger(name="userChangeValue" value="untrustUser" type="submit" ) Untrust User
+                                   br
+                                   br
+                                if user.status == 'restricted'
+                                   button.btn.btn-success(name="userChangeValue" value="unbanUser" type="submit" ) Unban User
+                                   br
+                                   br
+                                else
+                                   button.btn.btn-danger(name="userChangeValue" value="banUser" type="submit") Ban User
+                                   br
+                                   br
+                                if !user.privs.livestreaming
+                                   button.btn.btn-primary(name="userChangeValue" value="allowLivestream" type="submit") Allow Stream
+                                   br
+                                   br
+                                else
+                                   button.btn.btn-danger(name="userChangeValue" value="disallowLivestream" type="submit") Block Stream
 
