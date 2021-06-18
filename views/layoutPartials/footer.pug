@@ -8,23 +8,32 @@ footer
   .container.text-center
     p.pull-left © 2021 #{brandName} &nbsp
 
-    a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href="mailto:contact@newtube.app" target="_blank") Email
+    if displayEmail && linkEmail != ''
+        a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href=linkEmail target="_blank") Email
 
-    a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href="https://paypal.me/newtubeapp" target="_blank") PayPal
+    if displayPaypal && linkPaypal != ''
+        a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href=linkPaypal target="_blank") PayPal
 
-    a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href="https://twitter.com/newtube_app" target="_blank") Twitter
+    if displayTwitter && linkTwitter != ''
+        a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href=linkTwitter target="_blank") Twitter
 
-    a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href="https://www.facebook.com/NewTube-114869126871911" target="_blank") Facebook
+    if displayFacebook && linkFacebook != ''
+        a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href=linkFacebook target="_blank") Facebook
 
-    a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href="https://discord.gg/ejGah8H" target="_blank") Discord
+    if displayDiscord && linkDiscord != ''
+        a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href=linkDiscord target="_blank") Discord
+    
+    if displayGithub && linkGithub != ''
+        a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href=linkGithub target="_blank") GitHub
 
-    a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href="https://github.com/mayeaux/nodetube" target="_blank") GitHub
+    if displayRiot && linkRiot != ''
+        a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href=linkRiot target="_blank") Riot.im
 
-    a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href="https://riot.im/app/#/room/#nodetube:matrix.org" target="_blank") Riot.im
+    if displayReddit && linkReddit != ''
+        a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href=linkReddit target="_blank") Reddit
 
-    a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href="https://reddit.com/r/nodetube" target="_blank") Reddit
-
-    a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href="https://fosstodon.org/@nodetube" target="_blank") Fosstodon
+    if displayFosstodon && linkFosstodon != ''
+        a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;" href=linkFosstodon target="_blank") Fosstodon
 
     //a.pull-left(style="color:#aaa;margin-right:10px;text-decoration:underline;")
     //  button(onclick="toggleDarkLight()" class="link-button" id="dark-mode-button" style="") [Dark Mode]

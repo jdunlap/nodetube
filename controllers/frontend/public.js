@@ -6,6 +6,7 @@ const uploadServer = uploadHelpers.uploadServer;
 
 const Upload = require('../../models/index').Upload;
 const User = require('../../models/index').User;
+const customBranding = require('../../middlewares/custom/customBranding').customBranding;
 
 const logCaching = process.env.LOG_CACHING;
 const defaultLandingPage = process.env.DEFAULT_LANDING_PAGE;
@@ -76,7 +77,8 @@ exports.index = async(req, res) => {
       mediaAmount,
       channelAmount,
       viewAmount,
-      uploadServer
+      uploadServer,
+      customBranding
     });
 
   }

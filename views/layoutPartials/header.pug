@@ -16,7 +16,7 @@ style.
   }
 
   .search input {
-    width: 600px;
+    width: 650px;
     height: 36px;
 
     background: #fcfcfc;
@@ -310,9 +310,13 @@ style.
     a.hamburgerDropdown(href="#" style="position:absolute;left:28px;")
       img(src="/images/white-burger.jpg" style="width:52px;display:inline-block;" onclick='toggleNav()')
 
-    a(href="/" style="position:absolute;left:99px;top:15px;")
-      p.fullTitle(style="text-transform:uppercase;display:inline-block;color:#ffffff;font-size:25px;font-weight:900;") #{brandName}
-      p.singleLetter(style="text-transform:uppercase;color:#ffffff;") #{brandName}
+    if useLogo && instanceLogo != ''
+      a(href="/" style="position:absolute;left:99px;top:0px;")
+        img(src=instanceLogo height="100%")
+    else      
+      a(href="/" style="position:absolute;left:99px;top:15px;")
+        p.fullTitle(style="text-transform:uppercase;display:inline-block;color:#ffffff;font-size:25px;font-weight:900;") #{brandName}
+        p.singleLetter(style="text-transform:uppercase;color:#ffffff;") #{brandName}
 
     div.searchPlaceHolder(style="height:56px;display:inline-block;display:none;")
       a(href="#")
@@ -320,7 +324,7 @@ style.
         i.fas.fa-arrow-left.searchExpander.backButtonIcon(style="left:17px;display:none;width:70px;")
 
 
-    div.search-bar(style="width:45%;margin-left:200px;")
+    div.search-bar(style="width:45%;margin-left:350px;")
       input(type='hidden', name='_csrf', value=_csrf)
       input.search-query-input(style="margin-top:11px;margin-bottom:10px;" type='text', placeholder=`${  searchQuery !== undefined ? searchQuery : 'Search'   }` name='searchValue' value="")
       button.search-uploads-button.searchButton(style="right:-6px;background-color:black;")
