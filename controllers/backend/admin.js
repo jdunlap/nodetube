@@ -43,6 +43,16 @@ exports.postUsers = async(req, res) => {
     await user.save();
   }
 
+  if(userChangeValue == 'allowLivestream'){
+    user.privs.livestreaming = true;
+    await user.save();
+  }
+
+  if(userChangeValue == 'disallowLivestream'){
+    user.privs.livestreaming = false;
+    await user.save();
+  }
+
   actionType = userChangeValue;
 
   await createAdminAction(adminOrModerator, actionType, user._id, [], []);
